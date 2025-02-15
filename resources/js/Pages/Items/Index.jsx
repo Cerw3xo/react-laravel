@@ -4,6 +4,7 @@ import InputError from "@/Components/InputError";
 import PrimaryButton from "@/Components/PrimaryButton";
 import { useForm, Head } from "@inertiajs/react";
 import Item from "@/Components/Item";
+import "./Index.scss";
 
 export default function Index({ auth, items }) {
     const { data, setData, post, processing, reset, errors } = useForm({
@@ -22,46 +23,70 @@ export default function Index({ auth, items }) {
         <AuthenticatedLayout>
             <Head title="Item" />
 
-            <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+            <div className="item-container">
                 <form onSubmit={submit}>
-                    <textarea
+                    <label htmlFor="name" className="form-label">
+                        Name
+                    </label>
+                    <input
+                        name="name"
                         value={data.name}
-                        placeholder="What's on your mind?"
-                        className="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                        placeholder="Enter product name"
+                        className="form-textarea"
                         onChange={(e) => setData("name", e.target.value)}
-                    ></textarea>
+                    ></input>
                     <InputError message={errors.name} className="mt-2" />
 
+                    <label htmlFor="description" className="form-label">
+                        Description
+                    </label>
                     <textarea
                         value={data.description}
-                        placeholder="What's on your mind?"
-                        className="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                        placeholder="Enter product description"
+                        className="form-textarea"
                         onChange={(e) => setData("description", e.target.value)}
                     ></textarea>
                     <InputError message={errors.descrption} className="mt-2" />
 
-                    <textarea
-                        value={data.price}
-                        placeholder="What's on your mind?"
-                        className="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                        onChange={(e) => setData("price", e.target.value)}
-                    ></textarea>
-                    <InputError message={errors.price} className="mt-2" />
-
-                    <textarea
-                        value={data.count}
-                        placeholder="What's on your mind?"
-                        className="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                        onChange={(e) => setData("count", e.target.value)}
-                    ></textarea>
-                    <InputError message={errors.count} className="mt-2" />
+                    <div className="input-container">
+                        <div className="input-group">
+                            <label className="form-label">Price</label>
+                            <input
+                                value={data.price}
+                                placeholder="Enter product price"
+                                className="form-textarea"
+                                onChange={(e) =>
+                                    setData("price", e.target.value)
+                                }
+                            ></input>
+                            <InputError
+                                message={errors.price}
+                                className="mt-2"
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label htmlFor="form-abel">Quantity</label>
+                            <input
+                                value={data.count}
+                                placeholder="Enter quantity"
+                                className="form-textarea"
+                                onChange={(e) =>
+                                    setData("count", e.target.value)
+                                }
+                            ></input>
+                            <InputError
+                                message={errors.count}
+                                className="mt-2"
+                            />
+                        </div>
+                    </div>
 
                     <PrimaryButton className="mt-4" disabled={processing}>
                         Add
                     </PrimaryButton>
                 </form>
 
-                <div className="mt-6 bg-white shadow-sm rounded-lg divide-y">
+                <div className="item-list">
                     {items.map((item) => (
                         <Item key={item.id} item={item} />
                     ))}

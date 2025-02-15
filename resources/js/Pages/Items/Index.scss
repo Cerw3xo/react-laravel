@@ -1,0 +1,126 @@
+@import "../../../sass/app.scss";
+
+.item-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding: 3rem 3%;
+    gap: 4rem;
+    min-height: 50vh;
+    height: 100%;
+    background-color: $primary-color;
+
+    form {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        > label {
+            color: $text;
+            position: relative;
+            top: 0.3rem;
+            font-size: 0.8rem;
+        }
+
+        > input {
+            background-color: $secondary-color;
+            border: none;
+            width: 100%;
+            border-radius: $radius;
+
+            &::placeholder {
+                color: $other;
+                opacity: 1;
+            }
+        }
+        > textarea {
+            background-color: $secondary-color;
+            border: none;
+            resize: none;
+            width: 100%;
+            border-radius: $radius;
+
+            &::placeholder {
+                color: $other;
+            }
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 0.7rem;
+            width: 100%;
+
+            .input-group {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 50%;
+
+                > label {
+                    color: $text;
+                    position: relative;
+                    top: 0.3rem;
+                    font-size: 0.8rem;
+                }
+
+                > input {
+                    width: 100%;
+                    background-color: $secondary-color;
+                    border: none;
+                    font-size: 0.9rem;
+                    border-radius: $radius;
+
+                    &::placeholder {
+                        color: $other;
+                        opacity: 1;
+                    }
+
+                    &:focus {
+                        border-color: $highlight-text;
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .item-list {
+        width: 90%;
+        padding: 1rem 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+
+        .edited-item {
+            display: flex;
+
+            .edited-form {
+                textarea,
+                input {
+                    color: $text;
+                }
+
+                .edited-container {
+                    display: flex;
+                    gap: 0.7rem;
+                    input {
+                        color: $text;
+                        background-color: $secondary-color;
+                        border: none;
+                    }
+                }
+            }
+
+            .item {
+                color: $text;
+                margin-top: 0.3rem;
+            }
+        }
+    }
+}

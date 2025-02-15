@@ -1,0 +1,178 @@
+$primary-color: #0b0d0f;
+$secondary-color: #24282e;
+$highlight-text: #0169fe;
+$other: #494c50;
+$text: #ffffff;
+
+$radius: 0.3rem;
+
+body {
+    background-color: $secondary-color;
+    color: $text;
+}
+
+//Dashboard
+.dashboard {
+    background-color: $primary-color;
+    min-height: 100vh;
+    border-radius: $radius;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+    .head {
+        background-color: $secondary-color;
+        border-radius: $radius;
+        width: 100%;
+        .header {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            height: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+        }
+    }
+
+    .dashboard-heading {
+        .header-container {
+            background-color: $secondary-color;
+            margin-top: 1rem;
+            border-radius: $radius;
+            padding: 1rem 5%;
+            h2 {
+                color: $text;
+            }
+        }
+    }
+
+    .selector {
+        background-color: $other;
+        color: $text;
+        border: none;
+        background-color: $highlight-text;
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 0.9rem;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1rem;
+        color: $text;
+        transition: all 150ms;
+        border-radius: $radius;
+        &:hover {
+            background-color: lighten($highlight-text, 10%);
+            color: $text;
+        }
+    }
+}
+
+.primary-button {
+    background-color: $highlight-text;
+    padding: 0.3rem 0.7rem;
+    border-radius: $radius;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-top: 0.7rem;
+}
+
+.dashboard-item {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    > div {
+        background-color: $primary-color;
+        border-radius: $radius;
+        width: 100%;
+        > div {
+            color: $text;
+        }
+    }
+}
+
+//Header
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    padding: 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+    line-height: 1.2rem;
+    transition: all 150ms ease;
+    outline: none;
+
+    &.active {
+        border-bottom-color: $highlight-text;
+        color: $highlight-text;
+    }
+
+    &:focus {
+        border-color: $other;
+        color: #162446;
+    }
+
+    &:hover {
+        color: lighten($other, 40%);
+        border-bottom-color: lighten($other, 10%);
+    }
+}
+
+//Selector menu
+.link {
+    color: $text;
+    cursor: pointer;
+    background-color: $other;
+    border-radius: $radius;
+    color: $text;
+    width: 9rem;
+
+    .link-item {
+        color: $text;
+
+        &:hover {
+            background-color: lighten($other, 20%);
+        }
+    }
+}
+
+//Profile Page
+.edit-profile {
+    background-color: $secondary-color;
+
+    input {
+        background-color: $other;
+        border: none;
+        color: $text;
+    }
+
+    .button {
+        color: #ffffff;
+    }
+    h2 {
+        color: $highlight-text;
+    }
+    p {
+        color: $text;
+    }
+    label {
+        color: $text;
+    }
+}
+
+.login-page {
+    background-color: $primary-color;
+
+    .login-form {
+        background-color: $other;
+        label,
+        span,
+        a {
+            color: $text;
+        }
+    }
+}

@@ -19,15 +19,8 @@ export default function Item({ item }) {
         count: item.count,
     });
 
-    // const submit = (e) => {
-    //     e.preventDefault();
-    //     patch(route("items.update", item.id), {
-    //         onSuccess: () => setEditing(false),
-    //     });
-    // };
-
     return (
-        <div className="p-6 flex space-x-2">
+        <div className=" edited-item">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 text-gray-600 -scale-x-100"
@@ -43,16 +36,16 @@ export default function Item({ item }) {
                 />
             </svg>
             <div className="flex-1">
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center ">
                     <div>
-                        <span className="text-gray-800">{item.user.name}</span>
-                        <small className="ml-2 text-sm text-gray-600">
+                        <span className="text-gray-300">{item.user.name}</span>
+                        <small className="ml-2 text-sm text-gray-300">
                             {dayjs(item.created_at).fromNow()}
                         </small>
                         {item.created_at !== item.updated_at && (
                             <small className="text-sm text-gray-600">
                                 {" "}
-                                &middot; edited
+                                &middot; Edited
                             </small>
                         )}
                     </div>
@@ -72,7 +65,7 @@ export default function Item({ item }) {
                             </Dropdown.Trigger>
                             <Dropdown.Content>
                                 <button
-                                    className="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 transition duration-150 ease-in-out"
+                                    className="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-200 hover:bg-gray-100 focus:bg-gray-600 transition duration-150 ease-in-out link-item "
                                     onClick={() => setEditing(true)}
                                 >
                                     Edit
@@ -91,9 +84,12 @@ export default function Item({ item }) {
                 {editing ? (
                     <ItemForm item={item} setEditing={setEditing} />
                 ) : (
-                    <p className="mt-4 text-lg text-gray-900">
-                        {item.description}
-                    </p>
+                    <div className="item">
+                        <p>{item.name}</p>
+                        <p>{item.description}</p>
+                        <p>{item.price}</p>
+                        <p>{item.count}</p>
+                    </div>
                 )}
             </div>
         </div>

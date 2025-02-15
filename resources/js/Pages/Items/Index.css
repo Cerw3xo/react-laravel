@@ -1,0 +1,255 @@
+body {
+  background-color: #24282e;
+  color: #ffffff;
+}
+
+.background-dashboard {
+  background-color: #0b0d0f;
+  min-height: 100vh;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.background-dashboard .header-container {
+  background-color: #24282e;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+}
+.background-dashboard .header-container .header {
+  background-color: #24282e;
+  border-radius: 0.3rem;
+}
+
+.primary-button {
+  background-color: #0169fe;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+  margin-top: 0.7rem;
+}
+
+.dashboard-item {
+  background-color: #0b0d0f;
+}
+.dashboard-item > div {
+  background-color: #24282e;
+  border-radius: 0.3rem;
+}
+.dashboard-item > div > div {
+  color: #ffffff;
+}
+
+.header-container {
+  background-color: #24282e;
+}
+.header-container .header-heading {
+  background-color: #24282e;
+  color: #ffffff;
+  border-radius: 0.3rem;
+  max-width: 100%;
+  padding: 1.5rem 1rem;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  padding: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.2rem;
+  transition: all 150ms ease;
+  outline: none;
+}
+.nav-link.active {
+  border-bottom-color: #0169fe;
+  color: #0169fe;
+}
+.nav-link:focus {
+  border-color: #494c50;
+  color: #162446;
+}
+.nav-link:hover {
+  color: #afb2b6;
+  border-bottom-color: #61656b;
+}
+
+.relative .button {
+  background-color: #494c50;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1rem;
+  color: #ffffff;
+  transition: all 150ms;
+  border-radius: 0.3rem;
+}
+
+.link {
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #494c50;
+  border-radius: 0.3rem;
+  color: #ffffff;
+  width: 9rem;
+}
+.link .link-item {
+  color: #ffffff;
+}
+.link .link-item:hover {
+  background-color: #7a7f85;
+}
+
+.edit-profile {
+  background-color: #24282e;
+}
+.edit-profile input {
+  background-color: #494c50;
+  border: none;
+  color: #ffffff;
+}
+.edit-profile .button {
+  color: #ffffff;
+}
+.edit-profile h2 {
+  color: #0169fe;
+}
+.edit-profile p {
+  color: #ffffff;
+}
+.edit-profile label {
+  color: #ffffff;
+}
+
+.login-page {
+  background-color: #24282e;
+}
+.login-page .login-form {
+  background-color: #494c50;
+}
+.login-page .login-form label,
+.login-page .login-form span,
+.login-page .login-form a {
+  color: #ffffff;
+}
+
+.item-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding: 3rem 3%;
+  gap: 4rem;
+  min-height: 50vh;
+  height: 100%;
+  background-color: #0b0d0f;
+}
+.item-container form {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.item-container form > label {
+  color: #ffffff;
+  position: relative;
+  top: 0.3rem;
+  font-size: 0.8rem;
+}
+.item-container form > input {
+  background-color: #24282e;
+  border: none;
+  width: 100%;
+  border-radius: 0.3rem;
+}
+.item-container form > input::-moz-placeholder {
+  color: #494c50;
+  opacity: 1;
+}
+.item-container form > input::placeholder {
+  color: #494c50;
+  opacity: 1;
+}
+.item-container form > textarea {
+  background-color: #24282e;
+  border: none;
+  resize: none;
+  width: 100%;
+  border-radius: 0.3rem;
+}
+.item-container form > textarea::-moz-placeholder {
+  color: #494c50;
+}
+.item-container form > textarea::placeholder {
+  color: #494c50;
+}
+.item-container form .input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.7rem;
+  width: 100%;
+}
+.item-container form .input-container .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 50%;
+}
+.item-container form .input-container .input-group > label {
+  color: #ffffff;
+  position: relative;
+  top: 0.3rem;
+  font-size: 0.8rem;
+}
+.item-container form .input-container .input-group > input {
+  width: 100%;
+  background-color: #24282e;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0.3rem;
+}
+.item-container form .input-container .input-group > input::-moz-placeholder {
+  color: #494c50;
+  opacity: 1;
+}
+.item-container form .input-container .input-group > input::placeholder {
+  color: #494c50;
+  opacity: 1;
+}
+.item-container form .input-container .input-group > input:focus {
+  border-color: #0169fe;
+  outline: none;
+}
+.item-container .item-list {
+  width: 90%;
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+.item-container .item-list .edited-item {
+  display: flex;
+}
+.item-container .item-list .edited-item .edited-form textarea,
+.item-container .item-list .edited-item .edited-form input {
+  color: #ffffff;
+}
+.item-container .item-list .edited-item .edited-form .edited-container {
+  display: flex;
+  gap: 0.7rem;
+}
+.item-container .item-list .edited-item .edited-form .edited-container input {
+  color: #ffffff;
+  background-color: #24282e;
+  border: none;
+}
+.item-container .item-list .edited-item .item {
+  color: #ffffff;
+  margin-top: 0.3rem;
+}/*# sourceMappingURL=Index.css.map */

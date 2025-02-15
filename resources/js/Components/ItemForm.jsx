@@ -25,12 +25,12 @@ export default function ItemForm({ item, setEditing }) {
     };
 
     return (
-        <form onSubmit={submit}>
-            <textarea
+        <form onSubmit={submit} className="edited-form">
+            <input
                 value={data.name}
                 onChange={(e) => setData("name", e.target.value)}
                 className="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-            ></textarea>
+            ></input>
             <InputError message={errors.name} className="mt-2" />
 
             <textarea
@@ -40,19 +40,21 @@ export default function ItemForm({ item, setEditing }) {
             ></textarea>
             <InputError message={errors.description} className="mt-2" />
 
-            <textarea
-                value={data.price}
-                onChange={(e) => setData("price", e.target.value)}
-                className="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-            ></textarea>
-            <InputError message={errors.price} className="mt-2" />
+            <div className="edited-container">
+                <input
+                    value={data.price}
+                    onChange={(e) => setData("price", e.target.value)}
+                    className="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                ></input>
+                <InputError message={errors.price} className="mt-2" />
 
-            <textarea
-                value={data.count}
-                onChange={(e) => setData("count", e.target.value)}
-                className="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-            ></textarea>
-            <InputError message={errors.count} className="mt-2" />
+                <input
+                    value={data.count}
+                    onChange={(e) => setData("count", e.target.value)}
+                    className="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                ></input>
+                <InputError message={errors.count} className="mt-2" />
+            </div>
 
             <div className="space-x-2">
                 <PrimaryButton className="mt-4">Save</PrimaryButton>
