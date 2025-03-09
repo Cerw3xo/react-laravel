@@ -12,7 +12,7 @@ export default function AuthenticatedLayout({ header, children }) {
         useState(false);
 
     return (
-        <div className=" dashboard">
+        <div className="dashboard">
             <nav className=" head ">
                 <div className="  sm:px-6 lg:px-8 header ">
                     <div className="flex">
@@ -33,7 +33,13 @@ export default function AuthenticatedLayout({ header, children }) {
                                 href={route("items.index")}
                                 active={route().current("items.index")}
                             >
-                                Admin
+                                Items
+                            </NavLink>
+                            <NavLink
+                                href={route("categories.index")}
+                                active={route().current("categories.index")}
+                            >
+                                Categories
                             </NavLink>
                         </div>
                     </div>

@@ -150,4 +150,88 @@ body {
 .login-page .login-form span,
 .login-page .login-form a {
   color: #ffffff;
-}/*# sourceMappingURL=app.css.map */
+}
+
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding: 5rem 5%;
+  gap: 4rem;
+  min-height: 50vh;
+  height: 100%;
+  background-color: #14181c;
+}
+.categories-container .form {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.categories-container .form > label {
+  color: #ffffff;
+  position: relative;
+  top: 0.3rem;
+  font-size: 0.8rem;
+}
+.categories-container .form > input {
+  background-color: #2a3442;
+  border: none;
+  width: 100%;
+  border-radius: 0.3rem;
+}
+.categories-container .form > input::-moz-placeholder {
+  color: #5f6d80;
+  opacity: 1;
+}
+.categories-container .form > input::placeholder {
+  color: #5f6d80;
+  opacity: 1;
+}
+.categories-container .form > textarea {
+  background-color: #2a3442;
+  border: none;
+  resize: none;
+  width: 100%;
+  border-radius: 0.3rem;
+}
+.categories-container .form > textarea::-moz-placeholder {
+  color: #5f6d80;
+}
+.categories-container .form > textarea::placeholder {
+  color: #5f6d80;
+}
+.categories-container .categories-list {
+  width: 100%;
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+.categories-container .categories-list .edited-categories-item {
+  display: flex;
+  padding: 0.7rem;
+  border-radius: 0.3rem;
+}
+.categories-container .categories-list .edited-categories-item svg {
+  color: #0169fe;
+}
+.categories-container .categories-list .edited-categories-item .edit-categories-list {
+  color: #ffffff;
+  margin-top: 0.7rem;
+}
+.categories-container .categories-list .edited-categories-item .edit-categories-list p {
+  margin-bottom: 0.3rem;
+  margin-left: 0.2rem;
+}
+.categories-container .categories-list .edited-categories-item .edited-categories-form {
+  margin-top: 0.7rem;
+}
+.categories-container .categories-list .edited-categories-item .edited-categories-form textarea,
+.categories-container .categories-list .edited-categories-item .edited-categories-form input {
+  color: #ffffff;
+  border-radius: 0.3rem;
+}/*# sourceMappingURL=Index.css.map */

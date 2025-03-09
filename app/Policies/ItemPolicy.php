@@ -21,7 +21,7 @@ class ItemPolicy
      */
     public function view(User $user, Item $item): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class ItemPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**

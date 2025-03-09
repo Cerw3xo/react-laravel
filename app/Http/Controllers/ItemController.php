@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\item;
+use App\Models\Item;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
@@ -11,13 +12,15 @@ use Illuminate\Support\Facades\Gate;
 
 class ItemController extends Controller
 {
-   private function getItemValidation() 
+   protected function getItemValidation() 
    {
    return [
         'name' => 'required|string|max:255',
         'description' => 'nullable|string|max:555',
         'price' => 'required|numeric|min:0',
         'count' => 'required|integer|min:0',
+        'category_id' => 'required|exists:categories,id',
+        'img' => 'nullable|file'
     ];
 }
 
@@ -28,6 +31,7 @@ class ItemController extends Controller
     {
        return Inertia::render('Items/Index', [
         'items' => Item::with('user:id,name')->latest()->get(),
+        'categories' => Category::get()
        ]);
     }
 
@@ -45,6 +49,14 @@ class ItemController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate($this->getItemValidation());
+
+        if($request->hasFile('img')) {
+            $file = $request->file('img');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('images', $fileName, 'public');
+            $validated['img'] = $filePath;
+        }
+
         $request->user()->items()->create($validated);
         return redirect(route('items.index'));
     }

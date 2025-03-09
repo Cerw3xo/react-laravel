@@ -17,6 +17,8 @@ class Item extends Model
         'description',
         'price',
         'count',
+        'category_id',
+        'img_path'
 
     ];
 
@@ -25,6 +27,7 @@ class Item extends Model
         return [
             'price' => 'decimal:2',
             'count' => 'integer',
+            'category_id' => 'integer'
         ];
     }
 
@@ -38,5 +41,11 @@ class Item extends Model
 
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function category(): BelongsTo
+
+    {
+        return $this->belongsTo(Category::class);
     }
 }

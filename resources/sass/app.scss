@@ -1,7 +1,9 @@
-$primary-color: #0b0d0f;
-$secondary-color: #24282e;
+@use "sass:color";
+
+$primary-color: #14181c;
+$secondary-color: #2a3442;
 $highlight-text: #0169fe;
-$other: #494c50;
+$other: #5f6d80;
 $text: #ffffff;
 
 $radius: 0.3rem;
@@ -135,7 +137,8 @@ body {
         color: $text;
 
         &:hover {
-            background-color: lighten($other, 20%);
+            // background-color: lighten($other, 20%);
+            background-color: color.adjust($color: $other, $lightness: 10%);
         }
     }
 }
